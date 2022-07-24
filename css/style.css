@@ -1,0 +1,517 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,800;0,900;1,200;1,300;1,400;1,600&display=swap');
+
+/* resetando css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box ; /* corrigindo o tamanho da box sizing */
+    outline: none;
+    font-family:"Nunito", sans-serif;
+    
+}
+
+
+:root {
+    --primary: rgb(228, 13, 13); 
+    --secundary: rgb(13, 13, 129); 
+    --tercy: rgb(255, 255, 160); 
+    --quart: rgb(148, 144, 144); 
+    --quint:rgb(248, 218, 156); 
+
+
+}; 
+
+html, 
+body {
+    width: 100%;
+    overflow-x: hidden; /* para não ter barra de rolagem na horizontal */ 
+   
+}
+
+header {
+    width: 100%;
+    height: 500px;
+    background:var(--primary);
+}
+
+.content {
+    max-width: 1000px; /* se tiver espaço o máximo é mil */ 
+    min-width: 300px; /* se não tiver espaço o minimo é 300px */
+    margin: 0 auto; /* alinhar as coisas ao centro */ 
+    display: flex; /* utilizando disply flex*/
+    flex-direction:column; 
+    padding: 10px;
+}
+
+nav {
+    width: 100%; /* ocupando todo espaço disponivel */
+    height: 125px; /* altura fixa */ 
+    display: flex;
+    flex-direction: row; /* direção do flex é linha */
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.brand {
+    font-size: 24px;
+    color: var(--tercy);
+    cursor: pointer;
+}
+
+
+/* customizando o menu */ 
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+/* customizando os itens da nav li */
+
+nav ul li {
+    list-style: none; /* tirando as bolinhas dos marcadores */ 
+    padding: 10px;
+    cursor: pointer;
+}
+
+nav ul li a {
+    color: var(--tercy);
+    text-decoration: none; /* tirando o _ dos elementos*/
+}
+
+nav ul li a:hover {
+    color: rgb(81, 32, 32);
+}
+
+nav ul button {
+    border: 1px solid var(--tercy);
+    background:transparent ;
+    padding: 8px 40px ;
+    cursor: pointer;
+    margin-left: 30px;
+    color:var(--secundary) ;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+nav ul button:hover {
+    transition: background, color 0.9s;
+    background:rgb(220, 206, 0);
+    color:rgb(15, 14, 14) ;
+}
+
+.content .header-block {
+    max-width: 1000px;
+    min-width: 300px;
+    height: 450px;
+    background: var(--tercy);
+    border-radius: 8px;
+    box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5); /* colocando sombra no nosso componente */ 
+    -webkit-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5); /* para funcionar no explorer*/ 
+    -moz-box-shadow: 1px 0px 10px 0px rgba(0, 0, 0, 0.5);/* funcionar no mozila */
+    position: relative; /* tudo dentro do nosso componente tera position absolute */
+    z-index: 10;
+    padding: 10px;   
+}
+
+/* tratamento da nossa imagem dentro do componente */
+.header-block  img {
+    width:40%;
+    position: absolute;
+    right: 2%;
+    bottom: 2%;
+}
+
+/* tratando o header block header */
+
+.header-block .text {
+    position: absolute;
+    bottom: 30%;
+    left: 15%;
+}
+
+/* tratamento do texto do H2*/
+
+.header-block .text h2 {
+    color: rgb(169, 15, 15);
+    margin-bottom: 20px;
+    text-align: right;
+    transform: translateX(-20px);
+    transition: transform 0.5s;
+
+}
+
+.header-block .text p{
+    max-width: 280px;
+    color:rgb(169, 15, 15);
+    text-align: right;
+    transform: translateX(-20px);
+    transition: transform 0.4s;
+}
+
+/* Estilizando catalogo de produto */
+
+section .catalog {
+    width: 100%;
+    padding:100px;
+}
+
+section .filter-card{
+    width: 980px;
+    height: 150px;
+    background-color: var(--secundary);
+    border-radius: 8px;
+    margin:0 auto; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.search-input {
+    width: 700px;
+    height: 50px;
+    border: none;
+    border-radius: 4px 0px  0px 4px;
+    text-indent: 10px;
+}
+
+.search-button {
+    width: 150px;
+    height: 50px;
+    border-radius: 0px 4px 4px 0px;
+    border: none;
+    background-color: var(--quart);
+    color: white;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition:0.4s ease;
+}
+
+.search-button:hover {
+    background:rgb(164, 161, 161);
+    color: var(--secundary);
+}
+
+.title-wraper-catalog {
+    margin-top: 200px;
+    padding-bottom: 20px;
+}
+
+section .card-wraper {
+    max-width: 1000px;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-gap:30px; /* espaço entre os itens do grid */
+    padding-top: 50px;
+}
+
+section .card-iten {
+    height: 400px;
+    background: var(--quint);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+}
+
+.card-content {
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-around;
+}
+
+.card-iten img {
+    width: 47%;
+}
+
+.card-iten h4 {
+    width: 90%;
+}
+
+.card-iten p {
+    width: 90%;
+    font-style:italic; 
+    color:#00000070;
+}
+
+.card-iten button {
+    width: 90%;
+    padding: 15px 0px;
+    border: none;
+    background:var(--secundary);
+    border-radius:4px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition:0.3s ease ;
+    margin-bottom: 10px;
+}
+
+.card-iten button:hover{
+    background:rgb(255, 253, 143);
+    color: black;
+}
+/*
+.sp {
+    width: 140px;
+}
+*/
+
+/* ABOUT - estilizando */
+
+.about {
+    width: 100%;
+    height: 100%;
+    display: flex; /* alinhar os itens internamente */ 
+    align-items: center;
+    justify-content: center;
+    padding: 50px 10px;
+}
+
+.about-content {
+    max-width: 1000px;
+    min-width: 300px;
+    height: 600px;
+    background:#919fef3b;
+    margin: 0 auto;
+    border-radius: 8px;
+    z-index: 10; /* ficar acima de qualquer elemento que possa surgir */
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* alinhamento horizontal dos itens */
+}
+
+.left {
+    width: 25%;
+    min-width: 300px;
+    height: 100%;
+    background:#db58581a;
+    border-radius: 8px;
+}
+
+.rigth {
+    width: 65%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start; /* para ficar alinhado no começo na horizontal e vertical */
+    justify-content: flex-start;
+    padding-top: 10%;
+}
+
+.rigth h3 {
+    text-align: right;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.rigth p {
+max-width: 90%;
+font-size: 1em;
+letter-spacing: 2px;
+text-align: right;
+color: rgba(0, 0, 0, 0.677);
+}
+
+.power {
+    height: 80%;
+    padding-top: 70px;
+    padding-left: 30px;
+}
+
+/* features - simbolos de dc e marvel  */ 
+
+.features {
+    width: 100%;
+    height: 100%;
+    background: var(--tercy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:50px 0px;
+}
+
+.title-wrapper-fetures {
+    padding: 20px 0px;
+}
+
+/* estilazando cards */ 
+
+.feature-card-block {
+    max-width: 1000px;
+    min-width: 300px;
+    height: 600px;
+    background: white;
+    margin: 0 auto;
+    border-radius: 8px;
+    z-index: 10;
+    padding: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(420px, 1fr));
+    grid-gap: 30px;
+}
+
+.feature-card-item {
+    max-width: 420px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border:1px solid #f874743b; 
+    border-radius:4px;
+}
+.feature-text-content {
+    max-width: 60%;
+    margin: 5px;
+}
+.feature-card-item img {
+    width:64px;
+    height: 64px;
+}
+
+/* estilizando footer */
+footer {
+    width: 100%;
+    height: 250px;
+}
+
+footer .main {
+    width: 100%;
+    height: 200px;
+    background-color: var(--primary);
+    padding: 20px 10px;
+}
+
+.footer-links {
+    max-width: 1000px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* linha com espaço entre os elementos */ 
+    margin-top: 20px;
+}
+
+.footer-company, .footer-rental, .footer-social, .footer-contact {
+    color:rgb(244, 244, 244);
+    height: 100%;
+    min-height: 100px;
+}
+
+.footer-links h4 {
+    margin-bottom:10px;
+}
+
+.footer-links h6 {
+    margin-bottom: 8px;
+}
+
+.main .footer-social img {
+    width: 32px;
+    height: 32px;
+}
+
+footer .last {
+    width: 100%;
+    height: 50px;
+    background: var(--quint);
+    color:var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* criando a responsibilidade com mobile */ 
+
+@media (max-width: 576px ) {
+    nav ul li  {
+        display: none;
+    }
+
+    .header-block img { 
+        width: 70%;
+        position: absolute;
+        right: 16%;
+        top: 30%;
+    }
+
+    .header-block .text {
+        position: absolute; 
+        bottom: 10%;
+        left: 15%;
+    }
+
+    section .filter-card {
+        width: 390px; 
+        padding: 0px 10px;
+        }
+
+    .search-input {
+        max-width: 700px;
+        min-width: 240px;
+    }
+
+    .search-button {
+        max-width: 150px;
+        min-width: 80px; 
+    }
+
+    .about {
+        margin-top: 100px;
+    }
+
+    .title-wraper-about {
+        margin-bottom: 20px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .left {
+        display: none;
+    }
+
+    .rigth {
+        width: 90%;
+    }
+
+    .rigth p  {
+        width: 100%;
+        margin: 0px;
+        text-align: left;
+    }
+
+    .features {
+        height: 100%;
+    }
+
+    .feature-card-block {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    footer {
+        height: 100%;
+    }
+
+    footer .main {
+        height: 100%;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        padding-left: 10%;
+    }
+}
